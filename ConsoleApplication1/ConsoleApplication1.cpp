@@ -12,9 +12,6 @@
 #include <io.h>
 #include <fcntl.h>
 
-// Déclaration d'une variable globale
-int tool;
-
 // Fonction pour effacer l'écran de la console
 void clearScreen() {
 #ifdef _WIN32
@@ -26,7 +23,7 @@ void clearScreen() {
 int main()
 {
     // Configurer la sortie standard pour utiliser l'encodage UTF-8
-    _setmode(_fileno(stdout), _O_U8TEXT);
+	SetConsoleOutputCP(CP_UTF8);
 
     std::string input;
 
@@ -67,7 +64,7 @@ int main()
             system("curl parrot.live");
      }
 
-        else if (input == "mkdir") {
+        else if (input.rfind("mkdir ", 0) == 0) {
             std::string dir = input.substr(6);
             std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
             std::wstring wdir = converter.from_bytes(dir);

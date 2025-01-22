@@ -66,13 +66,16 @@ int main()
 
         else if (input.rfind("mkdir ", 0) == 0) {
             std::string dir = input.substr(6);
-            std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-            std::wstring wdir = converter.from_bytes(dir);
-            if (CreateDirectory(wdir.c_str(), NULL)) {
-                std::wcout << L"Répertoire créé à : " << wdir << std::endl;
-            }
-            else {
-                std::wcerr << L"Erreur lors de la création du répertoire." << std::endl;
+            if (dir.empty()) {
+                std::wcerr << L"Erreur: Aucun nom de répertoire spécifié." << std::endl;
+            } else {
+                std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+                std::wstring wdir = converter.from_bytes(dir);
+                if (CreateDirectory(wdir.c_str(), NULL)) {
+                    std::wcout << L"Répertoire créé à : " << wdir << std::endl;
+                } else {
+                    std::wcerr << L"Erreur lors de la création du répertoire." << std::endl;
+                }
             }
         }
 

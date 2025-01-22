@@ -1,5 +1,31 @@
-//
-// Created by Alex on 22/01/2025.
-//
-
 #include "parrot.h"
+#include <iostream>
+
+void parrotCmd() {
+    system("curl parrot.live");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// carte google play

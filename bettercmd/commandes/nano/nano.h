@@ -7,9 +7,7 @@
 
 
 
-class nano {
-
-};
+void nanoCmd(const std::string& filepath);
 
 
 

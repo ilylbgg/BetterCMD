@@ -1,8 +1,12 @@
+// -*- coding: utf-8 -*-
 #include <iostream>
 #include <string>
 #include "commandes/help/help.cpp"
 #include "commandes/nano/nano.cpp"
 #include "commandes/parrot/parrot.cpp"
+#include "commandes/htop/htop.cpp"
+#include "commandes/say/say.cpp"
+#include "commandes/clear/clear.cpp"
 #include <windows.h>
 
 int main() {
@@ -17,7 +21,6 @@ int main() {
 
 
 
-
     while (true) {
         SetConsoleTitle("BetterCMD | by Axel | made with <3");
         std::cout << "BetterCMD > ";
@@ -27,6 +30,10 @@ int main() {
         if (input == "help") command = 1;
         else if (input == "nano") command = 2;
         else if (input == "parrot") command = 3;
+        else if (input == "htop") command = 4;
+        else if (input == "ls") command = 5;
+        else if (input == "say") command = 6;
+        else if (input == "clear") command = 7;
         else if (input == "exit") break;
 
         switch (command) {
@@ -39,6 +46,16 @@ int main() {
             case 3:
                 parrotCmd();
             break;
+            case 4:
+                htopCmd();
+            case 5:
+                std::cout << "Commande ls non implémentée.\n";
+            case 6:
+                sayCmd(input);
+            case 7:
+                clearCmd();
+            break;
+
             default:
                 std::cout << "Commande inconnue. Essayez à nouveau.\n";
         }

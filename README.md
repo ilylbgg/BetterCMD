@@ -3,8 +3,9 @@
 🇫🇷 + BetterCMD est une alternative au CMD De base Windows, creé en C++ il sera votre meilleur allié !
 🇬🇧 + BetterCMD is an alternative to the Windows Basic CMD, created in C++, it will be your best ally! 
 
++------------------------------------------+ \n
+| Commandes disponibles :                  | 
 +------------------------------------------+
-| Commandes disponibles :                  | +------------------------------------------+
 | nano   : ouvre un éditeur de texte       |
 | parrot : affiche un perroquet            |
 | htop   : affiche les informations de la  |
